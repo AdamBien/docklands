@@ -1,5 +1,5 @@
 # docklands
-Java EE Related Dockerfiles
+Minimalistic Java EE Related Dockerfiles
 
 ## Usage
 
