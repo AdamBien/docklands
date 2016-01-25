@@ -10,4 +10,5 @@ ADD standalone.conf ${WILDFLY_HOME}/bin/
 RUN chmod a+x ${WILDFLY_HOME}/bin/standalone.sh
 ADD start.sh ./start.sh
 RUN chmod +x ./start.sh
+ENTRYPOINT ./start.sh
 EXPOSE 8080
