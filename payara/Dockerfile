@@ -8,6 +8,6 @@ RUN unzip ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -d /opt
 ENV PAYARA_HOME ${INSTALL_DIR}/payara41/glassfish
 ENV EXEC ${PAYARA_HOME}/bin
 ENV DEPLOYMENT_DIR ${PAYARA_HOME}/domains/${DOMAIN_NAME}/autodeploy/
-ENTRYPOINT /opt/payara41/glassfish/bin/asadmin start-domain --verbose ${DOMAIN_NAME}
+ENTRYPOINT asadmin start-domain --verbose ${DOMAIN_NAME}
 WORKDIR /opt/payara41/glassfish/bin
 EXPOSE 4848 8009 8080 8181
