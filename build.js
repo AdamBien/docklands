@@ -1,7 +1,9 @@
 #!/usr/bin/jjs -fv
-load("java/build.js");
-load("payara/build.js");
-load("payara-configured/build.js");
-load("payara-ping/build.js");
-load("wildfly/build.js");
-load("wildfly-ping/build.js");
+var images = ["java", "payara", "payara-configured", "payara-ping", "wildfly", "wildfly-ping", "nano", "nano-micro", "tomee", "tomee-ping"];
+for each(image in images) {
+    print("\n\n");
+    print("Building ${image}");
+    $ENV.PWD = image;
+    load("${image}/build.js");
+    print("Image ${image} built!");
+}
