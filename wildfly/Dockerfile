@@ -9,7 +9,5 @@ RUN unzip ${VERSION}.zip -d ${INSTALL_DIR}
 RUN rm ${WILDFLY_HOME}/bin/standalone.conf
 ADD standalone.conf ${WILDFLY_HOME}/bin/
 RUN chmod a+x ${WILDFLY_HOME}/bin/standalone.sh
-ADD start.sh ./start.sh
-RUN chmod +x ./start.sh
-ENTRYPOINT ./start.sh
+ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0
 EXPOSE 8080
