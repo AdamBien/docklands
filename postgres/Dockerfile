@@ -10,6 +10,11 @@ RUN yum update -y \
 RUN chown postgres /data
 USER postgres
 RUN /usr/pgsql-9.5/bin/initdb -D /data
+RUN echo "listen_addresses='*'" >> /data/postgresql.conf &&\
+    echo "host all  all  0.0.0.0/0  md5" >> /data/pg_hba.conf
+RUN /usr/pgsql-9.5/bin/pg_ctl -D /data start -w &&\
+    /usr/pgsql-9.5/bin/psql --command "CREATE USER airhacks WITH SUPERUSER PASSWORD 'airhacks';" &&\
+    createdb -O airhacks airhacksdb
 EXPOSE 5432
 CMD ["/usr/pgsql-9.5/bin/postgres", "-D", "/data", "-c", "config_file=/data/postgresql.conf"]
 
