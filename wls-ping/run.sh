@@ -1,0 +1,1 @@
+docker run -d -p 8001:8001 --name wls-ping airhacks/wls-ping
