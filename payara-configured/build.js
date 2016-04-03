@@ -1,3 +1,4 @@
 #!/usr/bin/jjs -fv
-var cmd = "docker build --no-cache -t airhacks/payara-configured ."
-$EXEC(cmd);
+var cmd = "docker build -t airhacks/payara-configured ."
+var System = Java.type("java.lang.System");
+$EXEC(cmd, System.in, System.out, System.err);
