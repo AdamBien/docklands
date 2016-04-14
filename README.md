@@ -1,6 +1,10 @@
 # docklands
 Minimalistic Java EE Dockerfiles
 
+## Motivation
+
+Provide minimalistic dockerfiles.
+
 ## Usage
 
 Each folder represents a Dockerfile which can be build by executing the `build.js` command.
