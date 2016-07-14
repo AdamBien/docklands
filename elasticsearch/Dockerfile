@@ -8,4 +8,4 @@ RUN cd /home/elasticsearch \
     && curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/zip/elasticsearch/${VERSION}/elasticsearch-${VERSION}.zip \
     && unzip elasticsearch-${VERSION}.zip -d ${INSTALL_DIR}
 ENTRYPOINT ${INSTALL_DIR}/elasticsearch-${VERSION}/bin/elasticsearch
-EXPOSE 9200
+EXPOSE 9200 9300
