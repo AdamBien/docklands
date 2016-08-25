@@ -3,7 +3,7 @@ Minimalistic Java EE Dockerfiles
 
 ## Motivation
 
-Simplest viable dockerfiles for Java EE projects (aka microservices).
+Simplest viable dockerfiles for Java EE projects (aka microservices) aiming for build speed and productivity.
 
 ## Usage
 
