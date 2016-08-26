@@ -3,7 +3,7 @@ Minimalistic Java EE Dockerfiles
 
 ## Motivation
 
-Simplest viable dockerfiles for Java EE projects (aka microservices).
+Simplest viable dockerfiles for Java EE projects (aka microservices) aiming for build speed and productivity.
 
 ## Usage
 
@@ -17,3 +17,5 @@ Heavily used in [javaeemicro.services](http://javaeemicro.services)
 Docklands was used in the screencast: "The Memory Usage of Java EE 7 Application Servers Running On Docker":
 
 [![The Memory Usage of Java EE 7 Application Servers Running On Docker](https://i.ytimg.com/vi/i-r9bU3y3Y0/mqdefault.jpg)](https://www.youtube.com/embed/i-r9bU3y3Y0?rel=0)
+
+Docklands projects are also directly available from the official docker hub: [https://hub.docker.com/u/airhacks/](https://hub.docker.com/u/airhacks/)
