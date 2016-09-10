@@ -1,6 +1,6 @@
 FROM airhacks/java
 MAINTAINER Adam Bien, adam-bien.com
-ENV VERSION 10.0.0.Final
+ENV VERSION 10.1.0.Final
 ENV INSTALL_DIR /opt
 ENV WILDFLY_HOME ${INSTALL_DIR}/wildfly-${VERSION}
 ENV DEPLOYMENT_DIR ${WILDFLY_HOME}/standalone/deployments/
