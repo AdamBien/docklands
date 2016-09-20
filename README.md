@@ -7,7 +7,8 @@ Simplest viable dockerfiles for Java EE projects (aka microservices) aiming for 
 
 ## Usage
 
-Each folder represents a Dockerfile which can be build by executing the `build.js` command.
+Each folder represents a Dockerfile which can be build by executing the `build.js` command. Recent builds already exist in [https://hub.docker.com/u/airhacks/](https://hub.docker.com/u/airhacks/). To run the image use the "airhacks" name e.g. `docker run -d -p 8080:8080 --name payara-ping airhacks/payara-ping`.
+
 You can either make the `build.js` executable or run it with `jjs -scripting build.js`
 
 Some images are executable. You will find a `run.sh` script in this case.
