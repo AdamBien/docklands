@@ -1,0 +1,12 @@
+global:
+  scrape_interval:     15s
+
+  external_labels:
+    monitor: 'prometheus-monitor'
+
+scrape_configs:
+  - job_name: 'exporter'
+    scrape_interval: 5s
+    metrics_path: '/prometheus-exporter/resources/metrics'
+    static_configs:
+      - targets: ['exporter:8080']
