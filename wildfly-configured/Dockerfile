@@ -1,4 +1,4 @@
-FROM airhacks/widlfly
+FROM airhacks/wildfly
 MAINTAINER Adam Bien, adam-bien.com
 ENV DEPLOYMENT_DIR ${WILDFLY_HOME}/standalone/deployments/
 RUN rm ${WILDFLY_HOME}/bin/standalone.conf
