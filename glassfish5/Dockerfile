@@ -1,6 +1,6 @@
 FROM airhacks/java
 MAINTAINER Adam Bien, adam-bien.com
-ENV GLASSFISH_ARCHIVE glassfish4
+ENV GLASSFISH_ARCHIVE glassfish5
 ENV DOMAIN_NAME domain1
 ENV INSTALL_DIR /
 RUN curl -o ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}.zip -L http://download.oracle.com/glassfish/5.0/nightly/latest-glassfish.zip \ 
