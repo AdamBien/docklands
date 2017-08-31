@@ -1,0 +1,2 @@
+FROM airhacks/tomee
+ENV JAVA_OPTS "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9090 -Dcom.sun.management.jmxremote.rmi.port=9090 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=[EXTERNAL_IP_ADDRESS]"
