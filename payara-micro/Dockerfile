@@ -2,7 +2,7 @@ FROM airhacks/java
 MAINTAINER Adam Bien, adam-bien.com
 ENV PAYARA_ARCHIVE payaramicro41
 ENV INSTALL_DIR /opt
-RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.jar -L "http://info.payara.fish/cs/c/?cta_guid=21e00628-5d9e-400a-9805-1fc99fe0de87&placement_guid=0c1037e0-adaf-4401-b888-05088602db6a&portal_id=334594&redirect_url=APefjpFVsQB_htu3NVKna4zRjs_tCLoARwgBizSGCLsVswTfkZOF31FUJjd72xy37zAEH_s6iGa44DKv_MGBdW13uPEDWWEbDt9E8smFH24YTNNbBsGIGWM"
+RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.jar -L "http://info.payara.fish/cs/c/?cta_guid=21e00628-5d9e-400a-9805-1fc99fe0de87&placement_guid=0c1037e0-adaf-4401-b888-05088602db6a&portal_id=334594&redirect_url=APefjpFYtlu7oDOGMZCTGTtyN9vt-K32kh_MQdfXXhYy48juhgnXbDukWKhjnsSVuRdDn7T3JlH9_paATnuqajHYpCUW7caiUILJUTesVUX-BQRmPBmp3H1IyZmjiJVIOXUAVFEZU73jg2ZwnpActVxo5AWuca4Vpw7ZVJyYB62wsCdFLv8WUKP7X3sqSNRCVWkLiuFNXKjLzLViNqtI94nZrIXAVFCyeXW6J-egrG_WR-8crHV3Ol-_FS_AYabIse7yxDLsb2rh&hsutk=8ccfb50520c503176f25e315912e81a1"
 ENV PAYARA_HOME ${INSTALL_DIR}
 ENV DEPLOYMENT_DIR ${PAYARA_HOME}
 ENTRYPOINT java -jar ${PAYARA_ARCHIVE}.jar --deploy ${ARCHIVE_NAME}
