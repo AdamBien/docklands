@@ -1,9 +1,9 @@
 FROM airhacks/java
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Adam Bien, adam-bien.com" description="Glassfish v5 release image"
 ENV GLASSFISH_ARCHIVE glassfish5
 ENV DOMAIN_NAME domain1
 ENV INSTALL_DIR /
-RUN curl -o ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}.zip -L http://download.oracle.com/glassfish/5.0/nightly/latest-glassfish.zip \ 
+RUN curl -o ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}.zip -L http://download.oracle.com/glassfish/5.0/release/glassfish-5.0.zip \ 
     && unzip ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}.zip -d ${INSTALL_DIR} \ 
     && rm ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}.zip
 ENV GLASSFISH_HOME ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}/glassfish
