@@ -1,0 +1,17 @@
+#!/bin/bash
+
+keystorePath="/config/configDropins/defaults/keystore.xml"
+
+if [ ! -e $keystorePath ]
+then
+  # Generate the keystore.xml
+  PASSWORD=$(openssl rand -base64 32)
+  XML="<server description=\"Default Server\"><keyStore id=\"defaultKeyStore\" password=\"$PASSWORD\" /></server>"
+
+  # Create the keystore.xml file and place in configDropins
+  mkdir -p $(dirname $keystorePath)
+  echo $XML > $keystorePath
+fi
+
+# Pass on to the real server run
+exec /opt/ibm/wlp/bin/server $@
