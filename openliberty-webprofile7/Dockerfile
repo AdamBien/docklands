@@ -1,6 +1,3 @@
-# OpenLiberty WebProfile7
-
 FROM airhacks/openliberty-kernel
-MAINTAINER Adam Bien, adam-bien.com
-
+LABEL maintainer="Tobias N. Sasse, @tnsasse and Adam Bien, adam-bien.com" description="OpenLiberty Java EE 7 WebProfile"
 COPY server.xml /config/
