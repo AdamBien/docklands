@@ -2,7 +2,7 @@ FROM airhacks/java
 MAINTAINER Adam Bien, adam-bien.com
 ENV PAYARA_ARCHIVE payara41
 ENV DOMAIN_NAME domain1
-ENV INSTALL_DIR /
+ENV INSTALL_DIR .
 RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -L https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.2.172/payara-4.1.2.172.zip \ 
     && unzip ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -d ${INSTALL_DIR} \ 
     && rm ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip
