@@ -8,7 +8,7 @@ RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -L https://s3-eu-west-1.amazona
     && unzip ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -d ${INSTALL_DIR} \ 
     && rm ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip \
     && chown -R serveradmin:serveradmin /opt \
-    && chmod a+rwx /opt
+    && chmod -R a+rw /opt
 
 ENV PAYARA_HOME ${INSTALL_DIR}/payara41/glassfish
 ENV DEPLOYMENT_DIR ${INSTALL_DIR}/deploy
