@@ -7,7 +7,9 @@ RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serverad
 RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -L https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.2.172/payara-4.1.2.172.zip \ 
     && unzip ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -d ${INSTALL_DIR} \ 
     && rm ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip \
-    && chown -R serveradmin:serveradmin /opt
+    && chown -R serveradmin:serveradmin /opt \
+    && chmod a+rwx /opt
+
 ENV PAYARA_HOME ${INSTALL_DIR}/payara41/glassfish
 ENV DEPLOYMENT_DIR ${INSTALL_DIR}/deploy
 RUN mkdir ${DEPLOYMENT_DIR}
