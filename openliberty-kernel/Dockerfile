@@ -1,15 +1,20 @@
 FROM airhacks/java
 LABEL maintainer="Tobias N. Sasse, @tnsasse and Adam Bien, adam-bien.com" description="OpenLiberty Kernel"
-ENV RELEASE 2017-09-16_2214
-ENV VERSION 17.0.0.3-RC
+ENV VERSION 17.0.0.3
+ENV SHA 528e393e0b240ebbedb91d25402e22297c6d56ec
+
 ENV INSTALL_DIR /opt/ibm
 
 # Download OpenLiberty
 ENV OPENLIBERTY_HOME ${INSTALL_DIR}/openliberty-${VERSION}
 ENV DEPLOYMENT_DIR ${OPENLIBERTY_HOME}/standalone/deployments/
-RUN curl -O https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/${RELEASE}/openliberty-${VERSION}.zip \
-    && unzip openliberty-${VERSION}.zip -d ${INSTALL_DIR} \
-    && rm openliberty-${VERSION}.zip
+RUN curl -O https://repo1.maven.org/maven2/io/openliberty/openliberty-runtime/${VERSION}/openliberty-runtime-${VERSION}.zip \
+    && echo "$SHA openliberty-runtime-${VERSION}.zip" > openliberty-runtime-${VERSION}.zip.sha1 \
+    && sha1sum -c openliberty-runtime-${VERSION}.zip.sha1 \
+    && unzip -q openliberty-runtime-${VERSION}.zip -d ${INSTALL_DIR} \
+    && rm openliberty-runtime-${VERSION}.zip \
+    && rm openliberty-runtime-${VERSION}.zip.sha1
+
 ENV PATH=/opt/ibm/wlp/bin:$PATH
 
 # Set Path Shortcuts
