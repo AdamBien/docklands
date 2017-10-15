@@ -1,9 +1,8 @@
-# OpenLiberty Kernel
-
 FROM airhacks/java
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Tobias N. Sasse, @tnsasse and Adam Bien, adam-bien.com" description="OpenLiberty Kernel"
 ENV VERSION 17.0.0.3
 ENV SHA 528e393e0b240ebbedb91d25402e22297c6d56ec
+
 ENV INSTALL_DIR /opt/ibm
 
 # Download OpenLiberty

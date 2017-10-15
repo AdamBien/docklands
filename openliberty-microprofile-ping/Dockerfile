@@ -1,5 +1,4 @@
-# OpenLiberty MicroProfile with sample application
-
 FROM airhacks/openliberty-microprofile
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Tobias N. Sasse, @tnsasse and Adam Bien, adam-bien.com" description="OpenLiberty MicroProfile with ping healthcheck: https://github.com/adambien/ping"
+
 COPY ping.war ${DEPLOYMENT_DIR}
