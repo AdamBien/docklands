@@ -1,5 +1,5 @@
 FROM airhacks/java
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Adam Bien, adam-bien.com" description="Java EE7 Full & Web Distribution"
 ENV VERSION 11.0.0.Final
 ENV INSTALL_DIR /opt
 ENV WILDFLY_HOME ${INSTALL_DIR}/wildfly-${VERSION}

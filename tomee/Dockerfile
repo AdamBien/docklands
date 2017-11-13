@@ -1,5 +1,5 @@
 FROM airhacks/java
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Adam Bien, adam-bien.com" description="TomEE Plus"
 ENV ARCHIVE apache-tomee-plus-7.0.4
 ENV INSTALL_DIR /opt
 ENV SERVER_HOME ${INSTALL_DIR}/${ARCHIVE}

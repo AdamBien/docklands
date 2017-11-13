@@ -1,5 +1,5 @@
 FROM airhacks/java
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Adam Bien, adam-bien.com" description="Payara Server Full"
 ENV PAYARA_ARCHIVE payara41
 ENV DOMAIN_NAME domain1
 ENV INSTALL_DIR /opt
