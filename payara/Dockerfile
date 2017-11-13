@@ -4,7 +4,7 @@ ENV PAYARA_ARCHIVE payara41
 ENV DOMAIN_NAME domain1
 ENV INSTALL_DIR /opt
 RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
-RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -L https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.2.172/payara-4.1.2.172.zip \ 
+RUN curl -o ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -L https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.2.173/payara-4.1.2.173.zip \ 
     && unzip ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -d ${INSTALL_DIR} \ 
     && rm ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip \
     && chown -R serveradmin:serveradmin /opt \
