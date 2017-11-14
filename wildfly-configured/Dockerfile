@@ -1,5 +1,4 @@
 FROM airhacks/wildfly
-MAINTAINER Adam Bien, adam-bien.com
-ENV DEPLOYMENT_DIR ${WILDFLY_HOME}/standalone/deployments/
+LABEL maintainer="Adam Bien, adam-bien.com" description="Sample for WildFly with project-specific configuration"
 RUN rm ${WILDFLY_HOME}/bin/standalone.conf
 ADD standalone.conf ${WILDFLY_HOME}/bin/
