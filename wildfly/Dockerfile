@@ -10,7 +10,8 @@ RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip
     && unzip wildfly-${VERSION}.zip -d ${INSTALL_DIR} \
     && rm wildfly-${VERSION}.zip \
     && chown -R serveradmin:serveradmin /opt \
-    && chmod a+x ${WILDFLY_HOME}/bin/standalone.sh
+    && chmod a+x ${WILDFLY_HOME}/bin/standalone.sh \
+    && chmod -R a+rw /opt
 USER serveradmin
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0
 EXPOSE 8080
