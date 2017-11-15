@@ -9,4 +9,5 @@ COPY roles.properties ${CONFIGURATION_DIR}
 COPY standalone-full-wildfly-10.1.0.Final.xml ${CONFIGURATION_DIR}/standalone-full.xml
 COPY standalone-wildfly-10.1.0.Final.xml ${CONFIGURATION_DIR}/standalone.xml
 COPY standalone.conf ${WILDFLY_HOME}/bin/
+USER serveradmin
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -c standalone-full.xml -b=0.0.0.0
