@@ -1,5 +1,5 @@
 FROM airhacks/java
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Adam Bien, adam-bien.com" description="Prometheus with basic config"
 ENV ARCHIVE prometheus-2.0.0.linux-amd64
 ENV INSTALL_DIR .
 ENV SERVER_HOME ${INSTALL_DIR}/${ARCHIVE}
