@@ -7,5 +7,4 @@ RUN asadmin start-domain ${DOMAIN_NAME} && \
     asadmin create-network-listener --listenerport 8090 --protocol http-listener-1 --threadpool admin-thread-pool --enabled=true monitoring-listener && \
     asadmin deploy firehose.war && \
     asadmin stop-domain ${DOMAIN_NAME}
-
-
+EXPOSE 8090
