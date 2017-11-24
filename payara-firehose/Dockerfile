@@ -4,6 +4,7 @@ RUN echo ${DOMAIN_NAME}
 COPY firehose.war .
 RUN asadmin start-domain ${DOMAIN_NAME} && \
     asadmin enable-monitoring --modules web-container:ejb-container:http-service:jersey:transaction-service:jvm:thread-pool && \
+    asadmin create-network-listener --listenerport 8090 --protocol http-listener-1 --threadpool admin-thread-pool --enabled=true monitoring-listener && \
     asadmin deploy firehose.war && \
     asadmin stop-domain ${DOMAIN_NAME}
 
