@@ -4,8 +4,8 @@
     <!-- Enable features -->
     <featureManager>
         <feature>javaee-8.0</feature>
+        <feature>mpMetrics-1.0</feature>        
     </featureManager>
-
     <!-- To allow access to this server from a remote client host="*" has been added to the following element -->
     <httpEndpoint id="defaultHttpEndpoint" host="0.0.0.0" httpPort="9080" httpsPort="9443" />
     
