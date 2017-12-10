@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="OpenLiberty Java EE 8 Server">
+
+    <!-- Enable features -->
+    <featureManager>
+        <feature>javaee-8.0</feature>
+    </featureManager>
+
+    <!-- To allow access to this server from a remote client host="*" has been added to the following element -->
+    <httpEndpoint id="defaultHttpEndpoint" host="0.0.0.0" httpPort="9080" httpsPort="9443" />
+    
+    <!-- default keystore is required by the CORBA ORB (and full Java EE 8 spec) -->
+    <keyStore id="defaultKeyStore" password="UNSECURE" />
+     
+    <basicRegistry id="basic">
+        <user name="admin" password="adminadmin" />
+        <user name="nonadmin" password="guest" />
+    </basicRegistry>
+    
+    <!-- Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+
+</server>
