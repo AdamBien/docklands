@@ -1,6 +1,6 @@
 FROM airhacks/java
 LABEL maintainer="Adam Bien, adam-bien.com" description="Payara5 Server Full"
-ENV PAYARA_ARCHIVE payara51
+ENV PAYARA_ARCHIVE payara5
 ENV DOMAIN_NAME domain1
 ENV INSTALL_DIR /opt
 RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
