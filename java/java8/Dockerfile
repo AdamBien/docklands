@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Adam Bien, adam-bien.com
+LABEL maintainer="Adam Bien, adam-bien.com" description="Base image for all docklands images"
 RUN yum update -y \
   && yum -y install unzip \
   && yum -y install java-1.8.0-openjdk-devel \
