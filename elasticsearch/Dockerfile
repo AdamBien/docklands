@@ -2,7 +2,7 @@ FROM airhacks/java
 MAINTAINER Adam Bien, adam-bien.com
 RUN useradd elasticsearch
 ENV INSTALL_DIR /home/elasticsearch
-ENV VERSION 6.0.1
+ENV VERSION 6.4.1
 USER elasticsearch
 WORKDIR /home/elasticsearch
 RUN curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-${VERSION}.zip \
