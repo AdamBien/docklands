@@ -9,5 +9,5 @@ RUN yum update -y \
   && yum clean all \
   && rm openjdk-${VERSION}_linux-x64_bin.tar.gz \  
   && rm -rf /var/cache/yum
-ENV JAVA_HOME /usr/lib/jvm/jdk-11
+ENV JAVA_HOME /usr/lib/jvm/jdk-${VERSION}
 ENV PATH "$PATH":/${JAVA_HOME}/bin:.:
