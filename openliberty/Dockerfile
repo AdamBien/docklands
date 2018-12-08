@@ -1,4 +1,4 @@
-FROM airhacks/java:11
+FROM airhacks/openj9
 LABEL maintainer="Adam Bien, adam-bien.com" description="OpenLiberty Kernel Development Builds"
 ENV RELEASE 2018-09-05_2337
 ENV VERSION 18.0.0.3
