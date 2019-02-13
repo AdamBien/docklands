@@ -33,13 +33,15 @@ mvn clean package && docker build -t airhacks/thinfish .`
 
 output:
 
-`HTTP/1.1 200 OK
+```
+HTTP/1.1 200 OK
 Server: GlassFish Server Open Source Edition  5.1.0 
 X-Powered-By: Servlet/3.1 JSP/2.3 (GlassFish Server Open Source Edition  5.1.0  Java/Oracle Corporation/1.8)
 Content-Type: text/plain
 Content-Length: 16
 
-Enjoy Java EE 8!% `
+Enjoy Java EE 8!% 
+```
 
 
 
