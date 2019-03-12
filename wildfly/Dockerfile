@@ -1,6 +1,6 @@
 FROM airhacks/java
-LABEL maintainer="Adam Bien, adam-bien.com" description="Java EE7 Full & Web Distribution"
-ENV VERSION 15.0.0.Final
+LABEL maintainer="Adam Bien, adam-bien.com" description="Java EE 8 Full & Web Distribution"
+ENV VERSION 16.0.0.Final
 ENV INSTALL_DIR /opt
 ENV WILDFLY_HOME ${INSTALL_DIR}/wildfly-${VERSION}
 ENV DEPLOYMENT_DIR ${WILDFLY_HOME}/standalone/deployments/
