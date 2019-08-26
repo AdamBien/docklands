@@ -1,0 +1,21 @@
+# perform oc create is wildfly-s2i
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: s2i-wildfly
+  labels:
+    app: s2i-wildfly
+spec:
+  source:
+    git:
+      ref: master
+      uri: "https://github.com/AdamBien/s2i-wildfly.git"
+    type: Git
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "wildfly-s2i:latest"
+  strategy:
+    dockerStrategy:
+      dockerfilePath: Dockerfile            
+    type: Docker
