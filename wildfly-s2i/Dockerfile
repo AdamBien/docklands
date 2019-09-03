@@ -12,4 +12,4 @@ RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip
     && chmod a+x ${WILDFLY_HOME}/bin/standalone.sh \
     && chmod -R a+rw ${INSTALL_DIR}
 USER 1001
-EXPOSE 8080
+EXPOSE 8080 9990
