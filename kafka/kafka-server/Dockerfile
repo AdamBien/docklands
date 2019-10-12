@@ -11,5 +11,7 @@ RUN curl -O http://apache.lauf-forum.at/kafka/2.3.0/kafka_${VERSION}.tgz \
     && chmod a+x ${KAFKA_HOME}/bin/zookeeper-server-start.sh \
     && chmod -R a+rw ${INSTALL_DIR}
 USER serveradmin
+RUN rm ${KAFKA_HOME}/config/server.properties
+COPY server.properties ${KAFKA_HOME}/config/server.properties
 ENTRYPOINT ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties
-EXPOSE 2181
+EXPOSE 9092
