@@ -1,5 +1,5 @@
 FROM airhacks/java
-LABEL maintainer="Adam Bien, adam-bien.com" description="zookeeper for kafka"
+LABEL maintainer="Adam Bien, adam-bien.com" description="Kafka Server"
 ENV INSTALL_DIR /opt
 ENV VERSION 2.12-2.3.0 
 ENV KAFKA_HOME ${INSTALL_DIR}/kafka_${VERSION}
@@ -11,5 +11,5 @@ RUN curl -O http://apache.lauf-forum.at/kafka/2.3.0/kafka_${VERSION}.tgz \
     && chmod a+x ${KAFKA_HOME}/bin/zookeeper-server-start.sh \
     && chmod -R a+rw ${INSTALL_DIR}
 USER serveradmin
-ENTRYPOINT ${KAFKA_HOME}/bin/zookeeper-server-start.sh ${KAFKA_HOME}/config/zookeeper.properties
+ENTRYPOINT ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties
 EXPOSE 2181
