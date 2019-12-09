@@ -6,7 +6,7 @@ ENV USER airhacks
 RUN mkdir -m a=rwx ${INSTALL_DIR}
 ENV PGDATA /data
 ENV VERSION 12
-RUN dnf install -y postgresql-server
+RUN dnf install -y postgresql-server postgresql-contrib postgresql-devel
 RUN chown postgres ${INSTALL_DIR}
 USER postgres
 RUN initdb -D ${INSTALL_DIR}
