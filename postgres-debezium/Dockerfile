@@ -19,9 +19,9 @@ RUN echo "listen_addresses='*'" >> ${INSTALL_DIR}/postgresql.conf &&\
     echo "max_wal_senders = 4" >> ${INSTALL_DIR}/postgresql.conf &&\
     echo "max_replication_slots = 4 " >> ${INSTALL_DIR}/postgresql.conf &&\
     echo "host all  all  0.0.0.0/0  md5" >> ${INSTALL_DIR}/pg_hba.conf &&\
-    echo "local   replication     postgres                          trust" >> ${INSTALL_DIR}/pg_hba.conf &&\
-    echo "host    replication     postgres  127.0.0.1/32            trust" >> ${INSTALL_DIR}/pg_hba.conf &&\
-    echo "host    replication     postgres  ::1/128                 trust" >> ${INSTALL_DIR}/pg_hba.conf
+    echo "local   replication     airhacks                          trust" >> ${INSTALL_DIR}/pg_hba.conf &&\
+    echo "host    replication     airhacks  127.0.0.1/32            trust" >> ${INSTALL_DIR}/pg_hba.conf &&\
+    echo "host    replication     airhacks  ::1/128                 trust" >> ${INSTALL_DIR}/pg_hba.conf
 RUN pg_ctl -D /data start -w &&\
     psql --command "CREATE USER airhacks WITH SUPERUSER PASSWORD 'airhacks';" &&\
     psql --command "CREATE ROLE name REPLICATION LOGIN;" &&\
