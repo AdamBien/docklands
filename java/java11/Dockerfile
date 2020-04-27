@@ -3,7 +3,7 @@ LABEL maintainer="Adam Bien, adam-bien.com" description="Base image with JDK 11 
 RUN yum update -y \
   && yum -y install unzip \
   && yum -y install java-11-openjdk-devel \
-  && yum -y install glibc-locale-source glibc-langpack-en \
+  && yum -y install glibc-locale-source \
   && localedef -i en_US -f UTF-8 en_US.UTF-8 \
   && yum clean all
 
