@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 LABEL maintainer="Adam Bien, adam-bien.com" description="Base image for all docklands images"
 RUN yum update -y \
   && yum -y install unzip \
