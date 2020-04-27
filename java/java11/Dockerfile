@@ -5,3 +5,4 @@ RUN yum update -y \
   && yum -y install java-11-openjdk-devel \
   && yum clean all
 ENV JAVA_HOME /usr/lib/jvm/java-11
+ENV PATH "$PATH":.
