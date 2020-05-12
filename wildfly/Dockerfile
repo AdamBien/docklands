@@ -15,3 +15,4 @@ RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip
 USER serveradmin
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0
 EXPOSE 8080
+EXPOSE 9990
