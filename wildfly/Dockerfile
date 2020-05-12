@@ -1,11 +1,11 @@
-FROM airhacks/java
+FROM airhacks/java:11
 LABEL maintainer="Adam Bien, adam-bien.com" description="Java EE 8 Full & Web Distribution"
 ENV VERSION 19.1.0.Final
 ENV INSTALL_DIR /opt
 ENV WILDFLY_HOME ${INSTALL_DIR}/wildfly-${VERSION}
 ENV DEPLOYMENT_DIR ${WILDFLY_HOME}/standalone/deployments/
 ENV CONFIGURATION_DIR ${WILDFLY_HOME}/standalone/configuration
-RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
+RUN useradd -b /opt -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
 RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip \
     && unzip wildfly-${VERSION}.zip -d ${INSTALL_DIR} \
     && rm wildfly-${VERSION}.zip \
