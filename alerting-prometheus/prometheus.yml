@@ -1,0 +1,12 @@
+global:
+  scrape_interval:     5s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 5s
+  external_labels:
+    monitor: 'alerting-prometheus-monitor'
+rule_files:
+  - alerts.yml
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['service:8080']

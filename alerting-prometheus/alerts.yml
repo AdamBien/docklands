@@ -1,0 +1,10 @@
+groups:
+- name: availability
+  rules:
+  - alert: BackendNotAvailable
+    expr: rate(airhacks_retry_callsFailed_total[10s]) > 10
+#    for: 2s
+    labels:
+      severity: critical
+    annotations:
+      summary: Backend retry rate is too high
