@@ -5,7 +5,7 @@ ENV INSTALL_DIR .
 ENV SERVER_HOME ${INSTALL_DIR}/${ARCHIVE}
 RUN curl -o ${SERVER_HOME}.tar.gz -L https://github.com/prometheus/prometheus/releases/download/v2.18.1/prometheus-2.18.1.linux-amd64.tar.gz \
             && tar xvfz ${SERVER_HOME}.tar.gz
-WORKDIR ./prometheus-2.18.1.linux-amd64
+WORKDIR ${SERVER_HOME}/prometheus-2.18.1.linux-amd64
 COPY prometheus.yml .
 ENTRYPOINT ./prometheus --config.file=prometheus.yml
 EXPOSE 9090
