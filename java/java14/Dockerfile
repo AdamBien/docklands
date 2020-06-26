@@ -9,7 +9,7 @@ RUN yum update -y \
   && yum -y install glibc-locale-source \
   && localedef -i en_US -f UTF-8 en_US.UTF-8 \
   && yum clean all
-
+ENV JAVA_TOOLS_OPTIONS=--enable-preview
 ENV LC_ALL=en_US.UTF-8
 ENV JAVA_HOME /usr/lib/jvm/jdk-14.0.1
 ENV PATH "$PATH":.:"$JAVA_HOME/bin":
