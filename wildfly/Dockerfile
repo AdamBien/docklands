@@ -13,7 +13,6 @@ RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip
     && chmod a+x ${WILDFLY_HOME}/bin/standalone.sh \
     && chmod -R a+rw ${INSTALL_DIR}
 USER serveradmin
-ENV JAVA_OPTS --enable-preview
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0 -bmanagement=0.0.0.0
 EXPOSE 8080
 EXPOSE 9990
