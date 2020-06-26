@@ -1,4 +1,4 @@
-FROM airhacks/java:11
+FROM airhacks/java:14
 LABEL maintainer="Adam Bien, adam-bien.com" description="Jakarta EE 8 Full & Web Distribution"
 ENV VERSION 20.0.0.Final
 ENV INSTALL_DIR /opt
@@ -13,6 +13,7 @@ RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip
     && chmod a+x ${WILDFLY_HOME}/bin/standalone.sh \
     && chmod -R a+rw ${INSTALL_DIR}
 USER serveradmin
+RUN export JAVA_OPTS=--enable-preview
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -b=0.0.0.0 -bmanagement=0.0.0.0
 EXPOSE 8080
 EXPOSE 9990
