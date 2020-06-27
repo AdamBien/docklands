@@ -523,7 +523,7 @@
         <socket-binding name="txn-recovery-environment" port="4712"/>
         <socket-binding name="txn-status-manager" port="4713"/>
         <outbound-socket-binding name="jaeger">
-            <remote-destination host="localhost" port="6831"/>
+            <remote-destination host="${env.JAEGER_HOST:localhost}" port="6831"/>
         </outbound-socket-binding>
         <outbound-socket-binding name="mail-smtp">
             <remote-destination host="localhost" port="25"/>
