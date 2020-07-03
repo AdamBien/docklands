@@ -9,5 +9,5 @@ RUN mkdir -p ${DEPLOYMENT_DIR} \
     && chown -R 1001:0 ${INSTALL_DIR} \
     && chmod -R a+rw ${INSTALL_DIR}
 USER 1001
-ENTRYPOINT java -XshowSettings:vm -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Dquarkus.http.host=0.0.0.0 -jar  ${DEPLOYMENT_DIR}/supersonic-runner.jar
+ENTRYPOINT java --enable-preview -XshowSettings:vm -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Dquarkus.http.host=0.0.0.0 -jar  ${DEPLOYMENT_DIR}/supersonic-runner.jar
 EXPOSE 8080
