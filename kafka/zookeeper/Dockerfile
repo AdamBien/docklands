@@ -1,10 +1,10 @@
 FROM airhacks/java
 LABEL maintainer="Adam Bien, adam-bien.com" description="zookeeper for kafka"
 ENV INSTALL_DIR /opt
-ENV VERSION 2.12-2.3.0 
+ENV VERSION 2.13-2.6.0 
 ENV KAFKA_HOME ${INSTALL_DIR}/kafka_${VERSION}
-RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
-RUN curl -O http://apache.lauf-forum.at/kafka/2.3.0/kafka_${VERSION}.tgz \
+RUN useradd -b /opt -m -s /bin/sh serveradmin && echo serveradmin:serveradmin | chpasswd
+RUN curl -L -O http://apache.lauf-forum.at/kafka/2.6.0/kafka_${VERSION}.tgz \
     && tar zxf kafka_${VERSION}.tgz -C ${INSTALL_DIR} \
     && rm kafka_${VERSION}.tgz \
     && chown -R serveradmin:serveradmin /opt \
