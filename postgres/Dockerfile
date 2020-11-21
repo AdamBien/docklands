@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:32
 LABEL maintainer="Adam Bien, adam-bien.com" description="PostgreSQL"
 ENV INSTALL_DIR /data
 ENV DB airhacksdb
