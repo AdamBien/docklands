@@ -1,4 +1,4 @@
-FROM airhacks/kafka-server
+FROM airhacks/java
 LABEL maintainer="Adam Bien, adam-bien.com" description="Kafka PostgreSQL Connector"
 ENV INSTALL_DIR /opt
 ENV VERSION 2.12-2.3.0 
