@@ -4,7 +4,7 @@ ENV INSTALL_DIR /opt
 ENV VERSION 2.13-2.6.0 
 ENV DEBEZIUM_VERSION 1.0.0.Beta3
 ENV KAFKA_HOME ${INSTALL_DIR}/kafka_${VERSION}
-ENV ORACLE_INSTACLIENT ${INSTALL_DIR}}/instaclient
+ENV ORACLE_INSTACLIENT ${INSTALL_DIR}}/instantclient
 ENV LD_LIBRARY_PATH ${ORACLE_INSTACLIENT}
 RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
 RUN curl -L -O http://apache.lauf-forum.at/kafka/2.6.0/kafka_${VERSION}.tgz \
@@ -19,6 +19,6 @@ USER serveradmin
 COPY connector.properties ${KAFKA_HOME}/config/
 COPY worker.properties ${KAFKA_HOME}/config/
 RUN cp /opt/debezium-connector-oracle/*.jar ${KAFKA_HOME}/libs/
-COPY ./instaclient ${INSTALL_DIR}/
+COPY ./instantclient ${INSTALL_DIR}/
 ENTRYPOINT ${KAFKA_HOME}/bin/connect-standalone.sh ${KAFKA_HOME}/config/worker.properties ${KAFKA_HOME}/config/connector.properties
 EXPOSE 8083
