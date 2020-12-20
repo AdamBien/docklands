@@ -24,6 +24,8 @@ RUN cp /opt/debezium-connector-oracle/*.jar ${KAFKA_HOME}/libs/ \
 RUN yum -y install libaio
 COPY connector.properties ${KAFKA_HOME}/config/
 COPY worker.properties ${KAFKA_HOME}/config/
+COPY run.sh .
+RUN chmod a+x run.sh
 USER serveradmin
-ENTRYPOINT ${KAFKA_HOME}/bin/connect-standalone.sh ${KAFKA_HOME}/config/worker.properties ${KAFKA_HOME}/config/connector.properties
+ENTRYPOINT run.sh
 EXPOSE 8083
