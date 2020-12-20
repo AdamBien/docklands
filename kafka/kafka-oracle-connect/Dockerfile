@@ -16,6 +16,7 @@ RUN curl -L -O http://apache.lauf-forum.at/kafka/2.6.0/kafka_${VERSION}.tgz \
 RUN curl -O https://repo1.maven.org/maven2/io/debezium/debezium-connector-oracle/${DEBEZIUM_VERSION}/debezium-connector-oracle-${DEBEZIUM_VERSION}-plugin.tar.gz &&\
     tar zxvf debezium-connector-oracle-${DEBEZIUM_VERSION}-plugin.tar.gz -C ${INSTALL_DIR} \
     && rm debezium-connector-oracle-${DEBEZIUM_VERSION}-plugin.tar.gz
+COPY ./instantclient ${ORACLE_INSTANTCLIENT}/
 RUN cp /opt/debezium-connector-oracle/*.jar ${KAFKA_HOME}/libs/ \
     && cp ${ORACLE_INSTANTCLIENT}/*.jar ${KAFKA_HOME}/libs/ \
     && chown -R serveradmin:serveradmin ${ORACLE_INSTANTCLIENT} \
@@ -23,7 +24,6 @@ RUN cp /opt/debezium-connector-oracle/*.jar ${KAFKA_HOME}/libs/ \
 RUN yum -y install libaio
 COPY connector.properties ${KAFKA_HOME}/config/
 COPY worker.properties ${KAFKA_HOME}/config/
-COPY ./instantclient ${ORACLE_INSTANTCLIENT}/
 USER serveradmin
 ENTRYPOINT ${KAFKA_HOME}/bin/connect-standalone.sh ${KAFKA_HOME}/config/worker.properties ${KAFKA_HOME}/config/connector.properties
 EXPOSE 8083
