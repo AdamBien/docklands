@@ -1,5 +1,5 @@
 FROM airhacks/java
-LABEL maintainer="Adam Bien, adam-bien.com" description="Kafka Oracle Connector"
+LABEL maintainer="Adam Bien, adam-bien.com" description="Kafka Oracle Connector without Configuration"
 ENV INSTALL_DIR /opt
 ENV VERSION 2.13-2.6.0 
 ENV DEBEZIUM_VERSION 1.4.0.CR1
@@ -22,8 +22,6 @@ RUN cp /opt/debezium-connector-oracle/*.jar ${KAFKA_HOME}/libs/ \
     && chown -R serveradmin:serveradmin ${ORACLE_INSTANTCLIENT} \
     && chmod -R a+rw ${ORACLE_INSTANTCLIENT}
 RUN yum -y install libaio
-COPY connector.properties ${KAFKA_HOME}/config/
-COPY worker.properties ${KAFKA_HOME}/config/
 COPY run.sh .
 RUN chmod a+x run.sh
 USER serveradmin

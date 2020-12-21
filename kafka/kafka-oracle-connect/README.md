@@ -1,2 +1,9 @@
-#RUN
-docker rm -f kafka-oracle-connect && docker run --net kafka -p 8083:8083 --name kafka-oracle-connect airhacks/kafka-oracle-connect
+# Installation
+Connector without connector.properties and worker.properties.
+
+Inherit from this layer and add:
+
+```
+COPY connector.properties ${KAFKA_HOME}/config/
+COPY worker.properties ${KAFKA_HOME}/config/
+```
