@@ -1,4 +1,4 @@
-FROM airhacks/java
+FROM airhacks/java:14
 LABEL maintainer="Adam Bien, adam-bien.com" description="Kafka Oracle Connector without Configuration"
 ENV INSTALL_DIR /opt
 ENV VERSION 2.13-2.7.0 
