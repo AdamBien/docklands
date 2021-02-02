@@ -1,4 +1,4 @@
-FROM airhacks/java
+FROM airhacks/java:14
 LABEL maintainer="Adam Bien, adam-bien.com" description="zookeeper for kafka"
 ENV INSTALL_DIR /opt
 ENV VERSION 2.13-2.7.0 
