@@ -1,7 +1,7 @@
 FROM airhacks/java
 LABEL maintainer="Adam Bien, adam-bien.com" description="Artemis Messaging / JMS"
 ENV INSTALL_DIR /opt
-ENV VERSION 2.10.1 
+ENV VERSION 2.17.0 
 ENV ARTEMIS_HOME ${INSTALL_DIR}/apache-artemis-${VERSION}
 ENV BROKER_HOME ${INSTALL_DIR}/brokers/
 RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serveradmin:serveradmin | chpasswd
