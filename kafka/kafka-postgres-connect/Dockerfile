@@ -19,5 +19,9 @@ COPY worker.properties ${KAFKA_HOME}/config/
 RUN cp /opt/debezium-connector-postgres/debezium-core-${DEBEZIUM_VERSION}.jar ${KAFKA_HOME}/libs/
 RUN cp /opt/debezium-connector-postgres/postgresql-42.2.14.jar ${KAFKA_HOME}/libs/
 RUN cp /opt/debezium-connector-postgres/protobuf-java-3.8.0.jar ${KAFKA_HOME}/libs/
+RUN cp /opt/debezium-connector-postgres/failureaccess-1.0.1.jar ${KAFKA_HOME}/libs/
+RUN cp /opt/debezium-connector-postgres/debezium-api-1.6.2.Final.jar ${KAFKA_HOME}/libs/
+RUN cp /opt/debezium-connector-postgres/debezium-connector-postgres-1.6.2.Final.jar ${KAFKA_HOME}/libs/
+RUN cp /opt/debezium-connector-postgres/guava-30.0-jre.jar ${KAFKA_HOME}/libs/
 ENTRYPOINT ${KAFKA_HOME}/bin/connect-standalone.sh ${KAFKA_HOME}/config/worker.properties ${KAFKA_HOME}/config/connector.properties
 EXPOSE 8083
