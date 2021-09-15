@@ -9,4 +9,4 @@ RUN yum update -y \
 
 ENV LC_ALL=en_US.UTF-8
 ENV JAVA_HOME /usr/lib/jvm/java-11
-ENV PATH "$PATH":.
+ENV PATH "$PATH":.w
