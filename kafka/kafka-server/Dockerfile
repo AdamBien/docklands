@@ -1,10 +1,10 @@
 FROM airhacks/java
 LABEL maintainer="Adam Bien, adam-bien.com" description="Kafka Server"
 ENV INSTALL_DIR /opt
-ENV VERSION 2.13-2.8.0   
+ENV VERSION 2.13-3.0.0   
 ENV KAFKA_HOME ${INSTALL_DIR}/kafka_${VERSION}
 RUN useradd -b ${INSTALL_DIR} -m -s /bin/sh serveradmin && echo serveradmin:serveradmin | chpasswd
-RUN curl -L -O https://ftp-stud.hs-esslingen.de/pub/Mirrors/ftp.apache.org/dist/kafka/2.8.0/kafka_${VERSION}.tgz \
+RUN curl -L -O https://ftp-stud.hs-esslingen.de/pub/Mirrors/ftp.apache.org/dist/kafka/3.0.0/kafka_${VERSION}.tgz \
     && tar zxf kafka_${VERSION}.tgz -C ${INSTALL_DIR} \
     && rm kafka_${VERSION}.tgz \
     && chown -R serveradmin:serveradmin /opt \
