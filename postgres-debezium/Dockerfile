@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:35
 LABEL maintainer="Adam Bien, adam-bien.com" description="PostgreSQL with Logical Decoding for Debezium"
 ENV INSTALL_DIR /data
 ENV DB airhacksdb
