@@ -3,7 +3,7 @@
 
     <!-- Enable features -->
     <featureManager>
-        <feature>microProfile-1.0</feature>
+        <feature>microProfile-1.2</feature>
     </featureManager>
 
     <!-- To allow access to this server from a remote client host="*" has been added to the following element -->
